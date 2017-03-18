@@ -17,7 +17,32 @@ Route::get('/', function () {
 Route::get('/public', function () {
     return view('halo');
 });
-Route::get('/pengguna/{pengguna}', function ($pengguna) {
-    return "Hallo world dari pengguna $pengguna";
-});
+//Route::get('/pengguna/{pengguna}', function ($pengguna) {
+  //  return "Hallo world dari pengguna $pengguna";
+//});
 
+Route::get('dosen','dosencontroller@awal');
+Route::get('dosen/tambah','dosencontroller@tambah');
+
+
+Route::get('mahasiswa','mahasiswacontroller@awal');
+Route::get('mahasiswa/tambah','mahasiswacontroller@tambah');
+
+Route::get('pengguna','penggunacontroller@awal');
+Route::get('pengguna/tambah','penggunacontroller@tambah');
+
+
+Route::get('dosenmatakuliah','dosenmatakuliahcontroller@awal');
+Route::get('dosenmatakuliah/tambah','dosenmatakuliah@tambah');
+
+
+Route::get('matakuliah','matakuliahcontroller@awal');
+Route::get('matakuliah/tambah','matakuliahcontroller@tambah');
+
+
+Route::get('ruangan','ruangancontroller@awal');
+Route::get('ruangan/tambah','ruangancontroller@tambah');
+
+
+Route::get('jadwalmatakuliah','jadwalmatakuliahcontroller@awal');
+Route::get('jadwalmatakuliah/tambah','jadwalmatakuliahcontroller@tambah');
