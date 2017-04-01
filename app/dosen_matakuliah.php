@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class dosen_matakuliah extends Model
 {
 	protected $table = 'dosen_matakuliah';
-	protected $fillable =['dosen_id','matakuliah_id'];
-    //
+	public function jadwalmatakuliah()
+	{
+		return $this->hasMany(jadwalmatakuliah::class);
+	}
+	public function dosen()
+	{
+		return $this->belongsTo(dosen::class);
+	}
+	public function mahasiswa()
+	{
+		return $this->belongsTo(mahasiswa::class);
+	}
 }

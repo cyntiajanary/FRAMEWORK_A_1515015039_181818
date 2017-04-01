@@ -1,30 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App;
 
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 
-use App\Http\Requests;
-use App\jadwal_matakuliah;
-class jadwalmatakuliahController extends Controller
+class jadwalmatakuliah extends Model
 {
-	public function awal()
-	{
-		return "halo dari jadwalmatakuliahController";
-
-	}
-	public function tambah()
-	{
-		return $this->simpan();
-	}
-	public function simpan()
-	{
-		$jadwal_matakuliah = new jadwal_matakuliah();
-		$jadwal_matakuliah->mahasiswa = '3';
-		$jadwal_matakuliah->ruangan_id = '7';
-		$jadwal_matakuliah->dosen_matakuliah = '4';
-		$jadwal_matakuliah->save();
-		return "data dengan nama : {$dosen->nama} telah disimpan";
-	
-    //
+	protected $table = 'jadwalmatakuliah';
+	protected $fillable = ['mahasiswa_id','ruangan_id','dosenmatakuliah_id'];
+	public function dosenmatakuliah()
+{
+	return $this->belongsTo(dosenmatakuliah::class);
+}	
+public function ruangan()
+{
+	return $this->belongsTo(ruangan::class);
+}
+public function mahasiswa()
+{
+	return $this->belongsTo(mahasiswa::class);
+}
 }
