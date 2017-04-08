@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ruangan extends Model
+class Ruangan extends Model
 {
-	protected $table = 'ruangan';
-		protected $fillable = ['title'];
-		public function jadwalmatakuliah()
-		{
-			return $this->hasMany(jadwalmatakuliah::class);
-		}
-    //
+     protected $table = 'ruangan';
+     protected $fillable=['title'];
+public function jadwal_matakuliah()
+{
+	return $this->hasMany(Jadwal_Matakuliah::class,'jadwal_matakuliah_id');
+}
 }

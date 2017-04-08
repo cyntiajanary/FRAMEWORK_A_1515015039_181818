@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Nama : Cyntia Janary Risky Sulo<br>NIM : 1515015015</div>
+                <div class="title">Nama : Desy Mila Santi</div>
+                <div class="title">NIM : 1515015048</div>
             </div>
         </div>
     </body>
